@@ -13,9 +13,9 @@ commit_and_push() {
 
   if [[ "$choice" == "all" ]]; then
     git add .
+    git reset -- git_auto_pushV2.sh 
   elif [[ "$choice" == "specific" ]]; then
-    # Prompt for .js or .css files
-    read -p "Enter the names of the files you want to commit with the file extension  (separated by space): " -a fileNames
+    read -p "Enter the names of the files you want to commit (separated by space): " -a fileNames
     for file in "${fileNames[@]}"; do
       if [[ -f "$file" ]]; then
         git add "$file"
@@ -29,16 +29,10 @@ commit_and_push() {
   fi
 
   read -p "Enter your commit message: " commitMessage
-
   git commit -m "$commitMessage"
 
-  # Ensure the commit message is visible in GitHub
-  echo "Commit message: $commitMessage"
-
-  # Ask for branch name
   read -p "Enter the branch name you want to push to: " branchName
 
-  # Check if the branch exists locally
   if ! git show-ref --verify --quiet refs/heads/"$branchName"; then
     echo "Branch '$branchName' does not exist."
     read -p "Do you want to create a new branch? (y/n): " createBranch
