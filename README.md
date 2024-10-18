@@ -1,9 +1,9 @@
-# git_bashScript
-#Bash script designed to streamline the process of updating files on GitHub.
+# git_shellScript
+#Shell script designed to streamline the process of updating files on GitHub.
 
 Please follow the below steps--
 1. Clone Your Desired GitHub Repository: git clone repository-url
-2. After cloning the repository, copy and paste the Bash script file (git_auto_pushV2.sh) into your GitHub repository directory.
+2. After cloning the repository, copy and paste the Shell script file (git_auto_pushV2.sh) into your GitHub repository directory.
 3. Make the Script Executable: run the following code in terminal-- sudo chmod +x git_auto_pushV2.sh
 4. Now feel free to make any necessary changes to the files in your cloned local repository as needed.
 5. To upload your changes to the GitHub repository, execute the following command in the terminal: sudo ./git_auto_pushV2.sh
